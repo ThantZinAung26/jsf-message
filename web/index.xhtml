@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Messages</title>
+    </h:head>
+    <h:body>
+        <!--<img src="resources/img/717308.png" alt="" />-->
+
+        <hr/>
+
+        <h:graphicImage library="img" name="717308.png" width="1000" height="500" style="align-items: center" />
+
+        <h:form id="myform">
+
+            <h:messages />
+            <hr style="color: #ff0033"/>
+            <h:panelGrid columns="3">
+                <h:outputLabel for="name" value="Name :"/>
+                <h:inputText value="#{userBean.name}" id="name"/>
+                <h:message for="name"/>
+                <h:outputLabel for="pass" value="Password :"/>
+                <h:inputSecret value="#{userBean.password}" id="pass" required="true" label="Password" requiredMessage="Password is required." />
+                <h:message for="pass"/>
+
+                <h:commandButton value="Login" action="#{userBean.login()}" />
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+
